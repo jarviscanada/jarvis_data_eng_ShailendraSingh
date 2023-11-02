@@ -25,7 +25,7 @@ disk_io=$(vmstat -d | awk '{print $10}'| tail -n1 | xargs) #awk retrieves 10th c
 disk_available=$(df -BM / | awk '{print $4}' | tail -n1 | sed 's/M//g' | xargs) #df -BM / gets volume at / info in MB, awk retrieves 4th column, tail retrieves last line, sed removes M, xargs trims whitespace
 
 #Get timestamp in 'YYYY-MM-DD HH:MM:SS' UTC Format
-timestamp=$(vmstat -t | tail -n1 | awk '{print $18 " " $19}' | xargs) #tail retrieves last line, awk retrieves 18th and 19th column (date and time), xargs trims whitespace
+timestamp=$(date -u '+%Y-%m-%d %H:%M:%S')
 
 #Construct query to find matching id in host_info table
 host_id_query="SELECT id FROM host_info WHERE hostname='$hostname';"
