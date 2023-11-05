@@ -58,6 +58,7 @@ minute like below.
 
 ## Database Modeling
 ### host_info table
+```
       Column      |            Type             |                       Modifiers
 ------------------+-----------------------------+--------------------------------------------------------
  id               | integer                     | not null default nextval('host_info_id_seq'::regclass)
@@ -69,8 +70,10 @@ minute like below.
  l2_cache         | integer                     | not null
  timestamp        | timestamp without time zone |
  total_mem        | integer                     |
+```
 
  ### host_usage table
+ ```
      Column     |            Type             |                          Modifiers
 ----------------+-----------------------------+--------------------------------------------------------------
  timestamp      | timestamp without time zone | not null
@@ -80,6 +83,7 @@ minute like below.
  cpu_kernel     | smallint                    | not null
  disk_io        | integer                     | not null
  disk_available | integer                     | not null
+```
 
 # Test
 All scripts, the cronjob and the database were run on one machine and it all worked. This should also work on a cluster but, would need
