@@ -32,18 +32,67 @@ is `/yourpath/scripts`
 
 # Implementation
 ## Architecture
-![Architecture Diagram](./assets/ArchitectureDiagram.svg)
+![Architecture Diagram](./assets/ArchitectureDiagram.png)
 
 ## Scripts
 ### psql_docker.sh
 This script will either create, start or stop a docker container with an instance of Postgres SQL inside that holds our database.
+It will be run on only one machine.
 
+`bash psql_docker.sh create|start|stop [USERNAME] [PASSWORD]`
 
+### host_info.sh
+This script is run once on every machine and records the specs of the system into the host_info table of the database.
+
+`bash host_info.sh [PSQL HOST] [PORT #] [DATABASE NAME] [PSQL USERNAME] [PSQL PASSWORD]`
+
+### host_usage.sh
+When this script is run, it will take the current performance stats of the machine and record it into the host_usage table of the database.
+
+`bash host_usage.sh [PSQL HOST] [PORT #] [DATABASE NAME] [PSQL USERNAME] [PSQL PASSWORD]`
+
+While the above way allows you to manually add an entry to the database, it should typically be done through a cronjob that executes every
+minute like below.
+
+`* * * * * bash /yourpath/scripts/host_usage.sh [PSQL HOST] [PORT #] [DATABASE NAME] [PSQL USERNAME] [PSQL PASSWORD] &> /tmp/host_usage.log` 
 
 ## Database Modeling
+### host_info table
+      Column      |            Type             |                       Modifiers
+------------------+-----------------------------+--------------------------------------------------------
+ id               | integer                     | not null default nextval('host_info_id_seq'::regclass)
+ hostname         | character varying           | not null
+ cpu_number       | smallint                    | not null
+ cpu_architecture | character varying           | not null
+ cpu_model        | character varying           | not null
+ cpu_mhz          | double precision            | not null
+ l2_cache         | integer                     | not null
+ timestamp        | timestamp without time zone |
+ total_mem        | integer                     |
+
+ ### host_usage table
+     Column     |            Type             |                          Modifiers
+----------------+-----------------------------+--------------------------------------------------------------
+ timestamp      | timestamp without time zone | not null
+ host_id        | integer                     | not null default nextval('host_usage_host_id_seq'::regclass)
+ memory_free    | integer                     | not null
+ cpu_idle       | smallint                    | not null
+ cpu_kernel     | smallint                    | not null
+ disk_io        | integer                     | not null
+ disk_available | integer                     | not null
 
 # Test
+All scripts, the cronjob and the database were run on one machine and it all worked. This should also work on a cluster but, would need
+further testing to be 100% sure.
 
 # Deployment
+The project is deployed by following the instructions in the Quickstart section. However, in broad terms, one system requires docker and
+this system will run `psql_docker.sh` which will manage a docker container with a Postgres SQL database.
+
+Every system will also have a `host_info.sh` script that will be executed once and `host_usage.sh` script that will be executed every 
+minute using a cronjob.
 
 # Improvement
+1. The `host_info` table should be updated on restart, to ensure it adapts to hardware changes
+2. The `host_info` table should not allow duplicate systems in the table
+3. All the scripts should have more descriptive logs on success.
