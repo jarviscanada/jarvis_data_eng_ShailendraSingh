@@ -1,10 +1,10 @@
 # Shailendra Singh . Jarvis Consulting
 
-I am a software developer absolutely fascinated by everything software and making otherwise dumb machines like computers do intelligent tasks. I have been programming for over 10 years and through that time I have gained experience with everything from Windows application development to web development and bots. I studied at Wilfrid Laurier University, for a Bachelor of Science in Computer Science and a Mathematics Minor. I have made many pieces of software not only for fun but, to also solve serious problems my peers and I face. While I am most experienced with C++, C# and the .NET tech stack, I know many other technologies and languages. I find learning new technologies and creating new projects with them, incredibly fun and rewarding. Not only this but, I'm also a natural learner so, I will never have any problems developing software for any language or tech stack asked of me. Right now I am training with Jarvis Consulting Group and learning about a variety of technologies such as Bash, PostgreSQL and Docker. At the same time, I am also learning about how to develop software in a SCRUM/Agile environment.
+I am a software developer absolutely fascinated by everything software and making otherwise dumb machines like computers do intelligent tasks. I have been programming for over 10 years and through that time I have gained experience with everything from Windows application development to web development and bots. I studied at Wilfrid Laurier University, for a Bachelor of Science in Computer Science and a Mathematics Minor. I have made many pieces of software not only for fun but, to also solve serious problems my peers and I face. While I am most experienced with C++, C# and the .NET tech stack, I know many other technologies and languages. I find learning new technologies and creating new projects with them, incredibly fun and rewarding. Not only this but, I'm also a natural learner so, I will never have any problems developing software for any language or tech stack asked of me.
 
 ## Skills
 
-**Proficient:** C#, C++, Java, Python, Windows API (Win32) and Application Development
+**Proficient:** C#, C++, Java, Python, Win32 Application Development, WinForms and WinUI 3 Desktop Development
 
 **Competent:** Agile/Scrum, Git, ASP.NET, HTML, CSS, XAML
 
@@ -38,9 +38,9 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_Shailendra
 
 ## Professional Experiences
 
-**Software Developer, Jarvis Consulting Group (2023-present)**: Learning about how to work in a professional environment to develop software and work in a team. Everyday, we work within an AGILE/SCRUM framework to complete tickets on various topics such as Linux, Bash, SQL and more.
+**Software Developer, Jarvis Consulting Group (2023-present)**: Learning about how to work in a professional environment to develop software and work in a team. Everyday, we work within an Agile/Scrum framework to complete tickets on various topics such as Linux, Bash, SQL and more.
 
-**Mathematics Tutor, Self-employed (2019-2023)**: Helped students with Linear Algebra, Precalculus, Calculus and Discrete Mathematics. Guided various students by adapting teaching styles, to respond to individual needs and helps students gain confidence in mathematics, despite rampant mathematics anxiety. Every student passed the courses they were being guided through, regardless of their mathematical ability beforehand
+**Mathematics Tutor, Self-employed (2019-2023)**: Helped students with Linear Algebra, Precalculus, Calculus and Discrete Mathematics. Guided various students by adapting teaching styles, to respond to individual needs and helps students gain confidence in mathematics, despite rampant mathematics anxiety. Every student passed the courses they were being guided through, regardless of their mathematical ability beforehand.
 
 
 ## Education
@@ -48,7 +48,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_Shailendra
 
 
 ## Miscellaneous
-- Recreational walking and swimming
+- Recreational walking, cycling and swimming (Recently cycled from Brampton to Toronto in one go!)
 - PC Gaming (MechWarrior, World of Warcraft, etc)
 - Reverse Engineering using Ghidra, IDA Free and x32dbg
 - Reading and learning about various topics such as mathematics, history and more

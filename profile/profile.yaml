@@ -5,7 +5,7 @@ github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_Shailendra
 
 # Introduce yourself, your academic and professional background.
 # What excites you about the software industry and your passion. At least 80 words
-summary: I am a software developer absolutely fascinated by everything software and making otherwise dumb machines like computers do intelligent tasks. I have been programming for over 10 years and through that time I have gained experience with everything from Windows application development to web development and bots. I studied at Wilfrid Laurier University, for a Bachelor of Science in Computer Science and a Mathematics Minor. I have made many pieces of software not only for fun but, to also solve serious problems my peers and I face. While I am most experienced with C++, C# and the .NET tech stack, I know many other technologies and languages. I find learning new technologies and creating new projects with them, incredibly fun and rewarding. Not only this but, I'm also a natural learner so, I will never have any problems developing software for any language or tech stack asked of me. Right now I am training with Jarvis Consulting Group and learning about a variety of technologies such as Bash, PostgreSQL and Docker. At the same time, I am also learning about how to develop software in a SCRUM/Agile environment.
+summary: I am a software developer absolutely fascinated by everything software and making otherwise dumb machines like computers do intelligent tasks. I have been programming for over 10 years and through that time I have gained experience with everything from Windows application development to web development and bots. I studied at Wilfrid Laurier University, for a Bachelor of Science in Computer Science and a Mathematics Minor. I have made many pieces of software not only for fun but, to also solve serious problems my peers and I face. While I am most experienced with C++, C# and the .NET tech stack, I know many other technologies and languages. I find learning new technologies and creating new projects with them, incredibly fun and rewarding. Not only this but, I'm also a natural learner so, I will never have any problems developing software for any language or tech stack asked of me.
 
 # Group your skills by level.
 # Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
@@ -16,7 +16,8 @@ skills:
     - C++
     - Java
     - Python
-    - Windows API (Win32) and Application Development
+    - Win32 Application Development
+    - WinForms and WinUI 3 Desktop Development
   # At least 5 skills
   competent:
     - Agile/Scrum
@@ -89,12 +90,12 @@ professional_experience:
     company: "Jarvis Consulting Group"
     duration: "2023-present"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: Learning about how to work in a professional environment to develop software and work in a team. Everyday, we work within an AGILE/SCRUM framework to complete tickets on various topics such as Linux, Bash, SQL and more.
+    description: Learning about how to work in a professional environment to develop software and work in a team. Everyday, we work within an Agile/Scrum framework to complete tickets on various topics such as Linux, Bash, SQL and more.
 
   - title: "Mathematics Tutor"
     company: "Self-employed"
     duration: "2019-2023"
-    description: Helped students with Linear Algebra, Precalculus, Calculus and Discrete Mathematics. Guided various students by adapting teaching styles, to respond to individual needs and helps students gain confidence in mathematics, despite rampant mathematics anxiety. Every student passed the courses they were being guided through, regardless of their mathematical ability beforehand
+    description: Helped students with Linear Algebra, Precalculus, Calculus and Discrete Mathematics. Guided various students by adapting teaching styles, to respond to individual needs and helps students gain confidence in mathematics, despite rampant mathematics anxiety. Every student passed the courses they were being guided through, regardless of their mathematical ability beforehand.
 
 #List of edcuation
 education: 
@@ -117,7 +118,7 @@ others:
 #      - ""
   - title: "Activities/Hobbies"
     bullets:
-      - "Recreational walking, cycling and swimming (Recently cycled from Brampton to Toronto in one go)"
+      - "Recreational walking, cycling and swimming (Recently cycled from Brampton to Toronto in one go!)"
       - "PC Gaming (MechWarrior, World of Warcraft, etc)"
       - "Reverse Engineering using Ghidra, IDA Free and x32dbg"
       - "Reading and learning about various topics such as mathematics, history and more"
