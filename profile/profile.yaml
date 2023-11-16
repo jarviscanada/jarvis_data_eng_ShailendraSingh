@@ -75,7 +75,7 @@ highlighted_projects:
     #URL is optional
     git_url: "https://github.com/Shailosingh/Photokeep"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: Developed an image-hosting Discord bot that allows users to upload photos/files and organize them with folders. This allows users to easily access their saved photos for free anywhere the bot is, through simple commands on the fly. The bot was developed using C#, is hosted through Azure App Services and hosts all of its data using Azure Cosmos DB (NoSQL). Users can also access their data through a website developed with ASP.NET MVC.
+    description: Developed an image-hosting Discord bot that allows users to upload photos/files and organize them with folders. This allows users to easily access their saved photos for free anywhere the bot is, through simple commands on the fly. The bot was developed using C#, is hosted through Azure App Services and hosts all of its data using Azure Cosmos DB (NoSQL). Users can also access their data through a website developed with ASP.NET MVC. PhotoKeep currently serves over 189 users and hosts 993 photos.
 
   - name: "MineMaster"
     git_url: "https://github.com/Shailosingh/MineMaster"
