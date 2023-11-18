@@ -26,36 +26,6 @@
       "description": "Implemented a software solution to monitor a cluster of Linux machines and record their hardware specifications and performance statistics into a database. The solution is implemented by hosting a PostgreSQL database in a Docker container on one of the machines. Then all the machines have bash scripts installed that collect static hardware specifications at install time and performance statistics every minute through a cron job.",
       "git_url": "/linux_sql",
       "name": "Linux Cluster Monitoring Agent"
-    },
-    {
-      "description": "",
-      "git_url": "/core_java",
-      "name": "Core Java Apps"
-    },
-    {
-      "description": "",
-      "git_url": "/springboot",
-      "name": "Springboot App"
-    },
-    {
-      "description": "",
-      "git_url": "/python_data_anlytics",
-      "name": "Python Data Analytics"
-    },
-    {
-      "description": "",
-      "git_url": "/hadoop",
-      "name": "Hadoop"
-    },
-    {
-      "description": "",
-      "git_url": "/spark",
-      "name": "Spark"
-    },
-    {
-      "description": "",
-      "git_url": "/cloud_devops",
-      "name": "Cloud/DevOps"
     }
   ],
   "name": "Shailendra Singh",
@@ -73,7 +43,7 @@
   "professional_experience": [
     {
       "company": "Jarvis Consulting Group",
-      "description": "Learning about how to work in a professional environment to develop software and work in a team. Everyday, we work within an Agile/Scrum framework to complete tickets on various topics such as Linux, Bash, SQL and more.",
+      "description": "Working in a team, within an Agile/Scrum framework to develop many types of software using a variety of technologies. These include but are not limited to, Linux, Bash, PostgreSQL, Docker and more.",
       "duration": "2023-present",
       "title": "Software Developer"
     },
@@ -107,8 +77,8 @@
       "Java",
       "Python",
       "Win32 Application Development",
-      "WinForms and WinUI 3 Desktop Development"
+      ".NET Application Development"
     ]
   },
-  "summary": "I am a software developer absolutely fascinated by everything software and making otherwise dumb machines like computers do intelligent tasks. I have been programming for over 10 years and through that time I have gained experience with everything from Windows application development to web development and bots. I studied at Wilfrid Laurier University, for a Bachelor of Science in Computer Science and a Mathematics Minor. I have made many pieces of software not only for fun but, to also solve serious problems my peers and I face. While I am most experienced with C++, C# and the .NET tech stack, I know many other technologies and languages. I find learning new technologies and creating new projects with them, incredibly fun and rewarding. Not only this but, I'm also a natural learner so, I will never have any problems developing software for any language or tech stack asked of me."
+  "summary": "I am a software developer absolutely fascinated by everything software and making otherwise dumb machines like computers do intelligent tasks. I have been programming for over 10 years and through that time I have gained experience with everything from Windows application development to web development and bots. I studied at Wilfrid Laurier University, for a Bachelor of Science in Computer Science and a Mathematics Minor. I have made many pieces of software not only for fun but to also solve serious problems my peers and I face. While I am most experienced with C++, C# and the .NET tech stack, I know many other technologies and languages. I find learning new technologies and creating new projects with them, incredibly fun and rewarding. Not only this but I'm also a natural learner so I will never have any problems developing software for any language or tech stack asked of me."
 }
