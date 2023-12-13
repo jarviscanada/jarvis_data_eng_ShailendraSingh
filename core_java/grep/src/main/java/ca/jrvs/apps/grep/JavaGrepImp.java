@@ -47,7 +47,6 @@ public class JavaGrepImp implements JavaGrep
         grep.setOutFile(outPath);
 
         grep.logger.debug("Grep normal version beginning");
-
         try
         {
             grep.process();
