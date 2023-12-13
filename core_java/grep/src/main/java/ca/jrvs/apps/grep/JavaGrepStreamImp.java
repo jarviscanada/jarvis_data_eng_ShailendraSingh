@@ -18,7 +18,7 @@ import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class JavaGrepImp implements JavaGrep
+public class JavaGrepStreamImp implements JavaGrepStream
 {
     //Datafields
     final Logger logger = LoggerFactory.getLogger(JavaGrepImp.class);
@@ -46,7 +46,7 @@ public class JavaGrepImp implements JavaGrep
         grep.setRootPath(rootPath);
         grep.setOutFile(outPath);
 
-        grep.logger.debug("Grep normal version beginning");
+        grep.logger.debug("Grep Stream version beginning");
 
         try
         {
@@ -63,8 +63,23 @@ public class JavaGrepImp implements JavaGrep
     public void process() throws IOException
     {
         //Initialize variables
-        ArrayList<String> matchedLines = new ArrayList<>();
+        List<String> matchedLines;
 
+        //Get stream of input files
+        try(Stream<File> inputFileStream = listFiles(RootPath))
+        {
+            matchedLines = inputFileStream
+                    .map(this::readLines) //Get a stream of every line of each file
+                    .map(currentStream -> currentStream.filter(this::containsPattern)) //Filter out lines that don't contain pattern
+                    .flatMap(currentStream -> currentStream.map(matchedString -> matchedString)) //Flatten out the stream of streams (do nothing to the strings)
+                    .collect(Collectors.toList()); //Convert stream of strings to list
+        }
+
+        //Write all matched lines to file
+        logger.debug("Number of matched lines: " + matchedLines.size());
+        writeToFile(matchedLines);
+
+        /*
         //Iterate through all files
         List<File> allFiles = listFiles(RootPath);
         logger.debug(String.format("Number of input files found: %d", allFiles.size()));
@@ -85,10 +100,11 @@ public class JavaGrepImp implements JavaGrep
         //Write the final list of matched lines to the out file
         logger.debug("Number of matched lines: " + matchedLines.size());
         writeToFile(matchedLines);
+        */
     }
 
     @Override
-    public List<File> listFiles(String rootDir)
+    public Stream<File> listFiles(String rootDir)
     {
         //Ensures rootDir is a real directory
         Path rootDirectoryPath = Paths.get(rootDir);
@@ -98,37 +114,37 @@ public class JavaGrepImp implements JavaGrep
         }
 
         //Iterate through all paths (FOLLOW_LINKS ensures an error will be thrown if there are cycles in the file tree)
-        List<File> normalFilePaths;
+        Stream<File> normalFileStream;
         try(Stream<Path> filePathStream = Files.walk(rootDirectoryPath, FileVisitOption.FOLLOW_LINKS))
         {
             //Filter the filePaths to only be normal files and convert them to a list of File objects
-            normalFilePaths = filePathStream.filter(Files::isRegularFile)
-                    .map(Path::toFile)
-                    .collect(Collectors.toList());
+            normalFileStream = filePathStream
+                    .filter(Files::isRegularFile)
+                    .map(Path::toFile);
         }
         catch (IOException e)
         {
             throw new IllegalArgumentException(e);
         }
 
-        return normalFilePaths;
+        return normalFileStream;
     }
 
     @Override
-    public List<String> readLines(File inputFile)
+    public Stream<String> readLines(File inputFile)
     {
-        List<String> listOfLines;
+        Stream<String> streamOfLines;
         try
         {
             //This function uses UTF-8 charset by default
-            listOfLines = Files.readAllLines(inputFile.toPath());
+            streamOfLines = Files.lines(inputFile.toPath());
         }
         catch (IOException e)
         {
             throw new IllegalArgumentException(e);
         }
 
-        return listOfLines;
+        return streamOfLines;
     }
 
     @Override
