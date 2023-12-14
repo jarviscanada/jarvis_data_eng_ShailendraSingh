@@ -78,29 +78,6 @@ public class JavaGrepStreamImp implements JavaGrepStream
         //Write all matched lines to file
         logger.debug("Number of matched lines: " + matchedLines.size());
         writeToFile(matchedLines);
-
-        /*
-        //Iterate through all files
-        List<File> allFiles = listFiles(RootPath);
-        logger.debug(String.format("Number of input files found: %d", allFiles.size()));
-        for(File currentFile : allFiles)
-        {
-            //Go through every line of each file
-            List<String> allLines = readLines(currentFile);
-            for(String currentLine : allLines)
-            {
-                //If it contains the regex pattern, it is a matched line
-                if(containsPattern(currentLine))
-                {
-                    matchedLines.add(currentLine);
-                }
-            }
-        }
-
-        //Write the final list of matched lines to the out file
-        logger.debug("Number of matched lines: " + matchedLines.size());
-        writeToFile(matchedLines);
-        */
     }
 
     @Override
