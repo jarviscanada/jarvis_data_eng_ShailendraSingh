@@ -38,15 +38,15 @@ skills:
 # List of Jarvis projects
 jarvis_projects:
   - name: "Linux Cluster Monitoring Agent"
-    git_url: "/linux_sql"
+    git_url: "../develop/linux_sql"
     # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
     # The project description must start with an action verb (https://bit.ly/3guO98u)
     description: Implemented a software solution to monitor a cluster of Linux machines and record their hardware specifications and performance statistics into a database. The solution is implemented by hosting a PostgreSQL database in a Docker container on one of the machines. Then all the machines have bash scripts installed that collect static hardware specifications at install time and performance statistics every minute through a cron job.
 
-#  - name: "Core Java Apps"
-#    git_url: "/core_java"
-#    description: ""
-#
+  - name: "grep"
+    git_url: "../develop/core_java/grep"
+    description: "Implemented a simple version of the classic grep command line application. This application takes in an input directory that contains files, these files are scanned line-by-line, matched with a given regex pattern and those matched lines are printed in a specified output file. This project was developed using Java and its dependencies were managed via Maven."
+
 #  - name: "Springboot App"
 #    git_url: "/springboot"
 #    description: ""
@@ -75,7 +75,7 @@ highlighted_projects:
     #URL is optional
     git_url: "https://github.com/Shailosingh/Photokeep"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: Developed an image-hosting Discord bot that allows users to upload photos/files and organize them with folders. This allows users to easily access their saved photos for free anywhere the bot is, through simple commands on the fly. The bot was developed using C#, is hosted through Azure App Services and hosts all of its data using Azure Cosmos DB (NoSQL). Users can also access their data through a website developed with ASP.NET MVC. PhotoKeep currently serves over 189 users and hosts 993 photos.
+    description: Developed an image-hosting Discord bot that allows users to upload photos/files and organize them with folders. This allows users to easily access their saved photos for free anywhere the bot is, through simple commands on the fly. The bot was developed using C#, is hosted through Azure App Services and hosts all of its data using Azure Cosmos DB (NoSQL). Users can also access their data through a website developed with ASP.NET MVC. PhotoKeep currently serves over 195 users and hosts 1056 photos.
 
   - name: "MineMaster"
     git_url: "https://github.com/Shailosingh/MineMaster"
@@ -90,7 +90,7 @@ professional_experience:
     company: "Jarvis Consulting Group"
     duration: "2023-present"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: Working in a team, within an Agile/Scrum framework to develop many types of software using a variety of technologies. These include but are not limited to, Linux, Bash, PostgreSQL, Docker and more.
+    description: Working in a team, within an Agile/Scrum framework to develop many types of software using a variety of technologies. These include but are not limited to, Java, Linux, Bash, PostgreSQL, Docker and more.
 
   - title: "Mathematics Tutor"
     company: "Self-employed"
