@@ -15,18 +15,20 @@ I am a software developer absolutely fascinated by everything software and makin
 Project source code: [https://github.com/jarviscanada/jarvis_data_eng_ShailendraSingh](https://github.com/jarviscanada/jarvis_data_eng_ShailendraSingh)
 
 
-**Linux Cluster Monitoring Agent** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_ShailendraSingh/tree/master/linux_sql)]: Implemented a software solution to monitor a cluster of Linux machines and record their hardware specifications and performance statistics into a database. The solution is implemented by hosting a PostgreSQL database in a Docker container on one of the machines. Then all the machines have bash scripts installed that collect static hardware specifications at install time and performance statistics every minute through a cron job.
+**Linux Cluster Monitoring Agent** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_ShailendraSingh/tree/master../develop/linux_sql)]: Implemented a software solution to monitor a cluster of Linux machines and record their hardware specifications and performance statistics into a database. The solution is implemented by hosting a PostgreSQL database in a Docker container on one of the machines. Then all the machines have bash scripts installed that collect static hardware specifications at install time and performance statistics every minute through a cron job.
+
+**grep** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_ShailendraSingh/tree/master../develop/core_java/grep)]: Implemented a simple version of the classic grep command line application. This application takes in an input directory that contains files, these files are scanned line-by-line, matched with a given regex pattern and those matched lines are printed in a specified output file. This project was developed using Java and its dependencies were managed via Maven.
 
 
 ## Highlighted Projects
-**PhotoKeep** [[GitHub](https://github.com/Shailosingh/Photokeep)]: Developed an image-hosting Discord bot that allows users to upload photos/files and organize them with folders. This allows users to easily access their saved photos for free anywhere the bot is, through simple commands on the fly. The bot was developed using C#, is hosted through Azure App Services and hosts all of its data using Azure Cosmos DB (NoSQL). Users can also access their data through a website developed with ASP.NET MVC. PhotoKeep currently serves over 189 users and hosts 993 photos.
+**PhotoKeep** [[GitHub](https://github.com/Shailosingh/Photokeep)]: Developed an image-hosting Discord bot that allows users to upload photos/files and organize them with folders. This allows users to easily access their saved photos for free anywhere the bot is, through simple commands on the fly. The bot was developed using C#, is hosted through Azure App Services and hosts all of its data using Azure Cosmos DB (NoSQL). Users can also access their data through a website developed with ASP.NET MVC. PhotoKeep currently serves over 195 users and hosts 1056 photos.
 
 **MineMaster** [[GitHub](https://github.com/Shailosingh/MineMaster)]: Created a remake of the classic Windows XP version of *Minesweeper*. The game was created with C#, used WinUI 3 for the desktop version and Blazor WebAssembly for the web version. The game's logic was implemented as a separate modular library that was published as a NuGet package. This allows developers to easily make their own Minesweeper versions, with their own UIs, on any platform that supports .NET (Windows, Linux, MacOS, etc). The desktop version of the app was previously published on the Microsoft Store and had over 12,592 downloads.
 
 
 ## Professional Experiences
 
-**Software Developer, Jarvis Consulting Group (2023-present)**: Working in a team, within an Agile/Scrum framework to develop many types of software using a variety of technologies. These include but are not limited to, Linux, Bash, PostgreSQL, Docker and more.
+**Software Developer, Jarvis Consulting Group (2023-present)**: Working in a team, within an Agile/Scrum framework to develop many types of software using a variety of technologies. These include but are not limited to, Java, Linux, Bash, PostgreSQL, Docker and more.
 
 **Mathematics Tutor, Self-employed (2019-2023)**: Helped students with Linear Algebra, Precalculus, Calculus and Discrete Mathematics. Guided various students by adapting teaching styles, to respond to individual needs and helps students gain confidence in mathematics, despite rampant mathematics anxiety. Every student passed the courses they were being guided through, regardless of their mathematical ability beforehand.
 
