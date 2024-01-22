@@ -2,26 +2,89 @@ package jrvs.apps.stockquote.dao;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 public class Quote
 {
+    public Quote()
+    {
+        this.RetrievalTimestamp = new Timestamp(System.currentTimeMillis());
+    }
     @SerializedName("01. symbol")
-    String Symbol;
+    private String Symbol;
     @SerializedName("02. open")
-    String Open;
+    private double Open;
     @SerializedName("03. high")
-    String High;
+    private double High;
     @SerializedName("04. low")
-    String Low;
+    private double Low;
     @SerializedName("05. price")
-    String Price;
+    private double Price;
     @SerializedName("06. volume")
-    String Volume;
+    private int Volume;
     @SerializedName("07. latest trading day")
-    String LatestTradingDay;
+    private Date LatestTradingDay;
     @SerializedName("08. previous close")
-    String PreviousClose;
+    private double PreviousClose;
     @SerializedName("09. change")
-    String Change;
+    private double Change;
     @SerializedName("10. change percent")
-    String ChangePercent;
+    private String ChangePercent;
+    private Timestamp RetrievalTimestamp;
+
+    public String getSymbol()
+    {
+        return Symbol;
+    }
+
+    public double getOpen()
+    {
+        return Open;
+    }
+
+    public double getHigh()
+    {
+        return High;
+    }
+
+    public double getLow()
+    {
+        return Low;
+    }
+
+    public double getPrice()
+    {
+        return Price;
+    }
+
+    public int getVolume()
+    {
+        return Volume;
+    }
+
+    public Date getLatestTradingDay()
+    {
+        return LatestTradingDay;
+    }
+
+    public double getPreviousClose()
+    {
+        return PreviousClose;
+    }
+
+    public double getChange()
+    {
+        return Change;
+    }
+
+    public String getChangePercent()
+    {
+        return ChangePercent;
+    }
+
+    public Timestamp getRetrievalTimestamp()
+    {
+        return RetrievalTimestamp;
+    }
 }

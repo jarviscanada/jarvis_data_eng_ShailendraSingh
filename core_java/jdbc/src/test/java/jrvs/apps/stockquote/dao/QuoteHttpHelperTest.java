@@ -5,6 +5,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class QuoteHttpHelperTest
 {
     QuoteHttpHelper QuoteGetter;
@@ -15,11 +21,20 @@ public class QuoteHttpHelperTest
     }
 
     @Test
-    public void fetchQuoteInfo()
+    public void fetchQuoteInfo() throws ParseException
     {
-        String expected = "395.5000";
-        String actual = QuoteGetter.FetchQuoteInfo("MSFT").Open;
+        //Get the quote once
+        Quote testQuote = QuoteGetter.FetchQuoteInfo("MSFT");
 
-        assertEquals(expected, actual);
+        double expectedOpen = 395.7600;
+        double actualOpen = testQuote.getOpen();
+
+        assertEquals(expectedOpen, actualOpen, 0);
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+        Date expectedLatestTrading= formatter.parse("2024-01-19");
+        Date actualLatestTrading = testQuote.getLatestTradingDay();
+
+        assertEquals(formatter.format(expectedLatestTrading), formatter.format(actualLatestTrading));
     }
 }
