@@ -6,11 +6,21 @@ import java.util.Optional;
 public class PositionDao implements CrudDao<Position, String>
 {
 
-    private Connection c;
+    private Connection ConnectionObject;
+
+    public PositionDao(Connection newConnection)
+    {
+        this.ConnectionObject = newConnection;
+    }
 
     @Override
     public Position save(Position entity) throws IllegalArgumentException
     {
+        if(entity == null)
+        {
+            throw new IllegalArgumentException();
+        }
+
         return null;
     }
 

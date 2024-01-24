@@ -2,8 +2,10 @@ package jrvs.apps.stockquote.dao;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.sql.Date;
 
 public class Quote
 {
@@ -11,6 +13,22 @@ public class Quote
     {
         this.RetrievalTimestamp = new Timestamp(System.currentTimeMillis());
     }
+
+    public Quote(ResultSet resultSet) throws SQLException
+    {
+        this.Symbol = resultSet.getString("symbol");
+        this.Open = resultSet.getDouble("open");
+        this.High = resultSet.getDouble("high");
+        this.Low = resultSet.getDouble("low");
+        this.Price = resultSet.getDouble("price");
+        this.Volume = resultSet.getInt("volume");
+        this.LatestTradingDay = resultSet.getDate("latest_trading_day");
+        this.PreviousClose = resultSet.getDouble("previous_close");
+        this.Change = resultSet.getDouble("change");
+        this.ChangePercent = resultSet.getString("change_percent");
+        this.RetrievalTimestamp = resultSet.getTimestamp("timestamp");
+    }
+
     @SerializedName("01. symbol")
     private String Symbol;
     @SerializedName("02. open")

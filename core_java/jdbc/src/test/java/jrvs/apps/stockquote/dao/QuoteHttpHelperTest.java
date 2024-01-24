@@ -26,13 +26,13 @@ public class QuoteHttpHelperTest
         //Get the quote once
         Quote testQuote = QuoteGetter.FetchQuoteInfo("MSFT");
 
-        double expectedOpen = 400.0200;
+        double expectedOpen = 395.7500;
         double actualOpen = testQuote.getOpen();
 
         assertEquals(expectedOpen, actualOpen, 0);
 
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
-        Date expectedLatestTrading= formatter.parse("2024-01-22");
+        Date expectedLatestTrading= formatter.parse("2024-01-23");
         Date actualLatestTrading = testQuote.getLatestTradingDay();
 
         assertEquals(formatter.format(expectedLatestTrading), formatter.format(actualLatestTrading));
