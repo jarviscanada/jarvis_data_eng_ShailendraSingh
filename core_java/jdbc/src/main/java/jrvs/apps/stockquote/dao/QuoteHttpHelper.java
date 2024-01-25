@@ -1,6 +1,7 @@
 package jrvs.apps.stockquote.dao;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.net.URI;
@@ -45,7 +46,7 @@ public class QuoteHttpHelper
         }
 
         //Convert JSON to Quote object
-        Gson gsonObject = new Gson();
+        Gson gsonObject = new GsonBuilder().setDateFormat("yyyy-MM-dd").create(); //Ensure the LatestTradingDay date is parsed properly
         Quote quoteObject = gsonObject.fromJson(jsonResponse, Quote_Root.class).GlobalQuote;
         if(quoteObject == null)
         {
