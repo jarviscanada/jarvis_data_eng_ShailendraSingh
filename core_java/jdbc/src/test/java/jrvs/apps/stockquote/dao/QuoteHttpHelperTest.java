@@ -36,5 +36,9 @@ public class QuoteHttpHelperTest
         Date actualLatestTrading = testQuote.getLatestTradingDay();
 
         assertEquals(formatter.format(expectedLatestTrading), formatter.format(actualLatestTrading));
+
+        //Get an invalid quote and ensure that QuoteHttpHelper returns null
+        Quote invalidQuote = QuoteGetter.FetchQuoteInfo("NONSENSE");
+        assertNull(invalidQuote);
     }
 }

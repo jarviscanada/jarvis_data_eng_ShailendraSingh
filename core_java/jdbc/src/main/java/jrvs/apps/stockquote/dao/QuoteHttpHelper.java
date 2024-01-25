@@ -53,6 +53,12 @@ public class QuoteHttpHelper
             throw new IllegalArgumentException();
         }
 
+        //If the quote's symbol is null, then clearly the API search failed and  the symbol doesn't exist
+        if(quoteObject.getSymbol() == null)
+        {
+            return null;
+        }
+
         return quoteObject;
     }
 }
