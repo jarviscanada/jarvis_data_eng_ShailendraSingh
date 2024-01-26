@@ -23,6 +23,12 @@ public class Position
         this.ValuePaid = resultSet.getDouble("value_paid");
     }
 
+    public void BuyShares(int incomingNewNumSharesBought, double priceOfEachShare)
+    {
+        this.NumOfShares += incomingNewNumSharesBought;
+        this.ValuePaid += priceOfEachShare*incomingNewNumSharesBought;
+    }
+
     public String getSymbol()
     {
         return Symbol;
