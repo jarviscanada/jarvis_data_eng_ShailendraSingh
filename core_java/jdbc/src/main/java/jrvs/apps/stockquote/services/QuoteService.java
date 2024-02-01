@@ -24,6 +24,14 @@ public class QuoteService
      */
     public Optional<Quote> FetchQuoteDataFromAPI(String ticker)
     {
-        return Optional.ofNullable(HttpHelper.FetchQuoteInfo(ticker));
+        //Get the new quote from the API
+        Optional<Quote> quote = Optional.ofNullable(HttpHelper.FetchQuoteInfo(ticker));
+        if(quote.isEmpty())
+        {
+            return quote;
+        }
+
+        //If a quote actually arrives from the API, save the new copy to the database and return it
+        return Optional.of(Dao.save(quote.get()));
     }
 }

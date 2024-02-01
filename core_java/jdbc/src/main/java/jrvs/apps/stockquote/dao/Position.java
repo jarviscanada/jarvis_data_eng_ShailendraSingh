@@ -1,5 +1,7 @@
 package jrvs.apps.stockquote.dao;
 
+import com.sun.jdi.Value;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -27,6 +29,23 @@ public class Position
     {
         this.NumOfShares += incomingNewNumSharesBought;
         this.ValuePaid += priceOfEachShare*incomingNewNumSharesBought;
+    }
+
+    public String toString()
+    {
+        String positionString =
+                String.format
+                        (
+                                "Symbol: %s\n" +
+                                "Number Of Owned: %d\n" +
+                                "Value Paid: %f\n",
+
+                                Symbol,
+                                NumOfShares,
+                                ValuePaid
+                        );
+
+        return positionString;
     }
 
     public String getSymbol()

@@ -22,10 +22,17 @@ public class PositionService
      * @param ticker
      * @param numberOfShares
      * @param price
-     * @return The position in our database after processing the buy
+     * @return The position in our database after processing the buy (null if the inputs are invalid)
      */
     public Position Buy(String ticker, int numberOfShares, double price)
     {
+        ticker = ticker.toUpperCase();
+        //You can't sell negative shares or have a negative price
+        if(numberOfShares < 0 || price < 0)
+        {
+            return null;
+        }
+
         //Get quote for ticker. If it doesn't exist, then the purchase should fail (return null)
         Optional<Quote> quote = QuoteServiceInstance.FetchQuoteDataFromAPI(ticker);
         if(quote.isEmpty())
@@ -78,7 +85,14 @@ public class PositionService
      */
     public void Sell(String ticker)
     {
+        ticker = ticker.toUpperCase();
         Dao.deleteById(ticker);
+    }
+
+    public Optional<Position> GetPositionFromDatabase(String symbol)
+    {
+        symbol = symbol.toUpperCase();
+        return Dao.findById(symbol);
     }
 
 }

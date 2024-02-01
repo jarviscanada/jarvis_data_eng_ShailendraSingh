@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.sql.Date;
+import java.text.DecimalFormat;
 
 public class Quote
 {
@@ -49,6 +50,39 @@ public class Quote
         this.Change = resultSet.getDouble("change");
         this.ChangePercent = resultSet.getString("change_percent");
         this.RetrievalTimestamp = resultSet.getTimestamp("timestamp");
+    }
+
+    public String toString()
+    {
+        String quoteString =
+                String.format
+                        (
+                            "Symbol: %s\n" +
+                            "Open: %f\n" +
+                            "High: %f\n" +
+                            "Low: %f\n" +
+                            "Price: $%f\n" +
+                            "Volume: %d\n" +
+                            "Latest Trading Day: %s\n" +
+                            "Previous CLose: %f\n" +
+                            "Change: %f\n" +
+                            "Change Percent: %s\n" +
+                            "Time of Retrieval: %s\n",
+
+                            Symbol,
+                            Open,
+                            High,
+                            Low,
+                            Price,
+                            Volume,
+                            LatestTradingDay.toString(),
+                            PreviousClose,
+                            Change,
+                            ChangePercent,
+                            RetrievalTimestamp.toString()
+                        );
+
+        return quoteString;
     }
 
     public String getSymbol()
