@@ -5,6 +5,7 @@ import jrvs.apps.stockquote.dao.Quote;
 import jrvs.apps.stockquote.services.QuoteService;
 import jrvs.apps.stockquote.services.PositionService;
 
+import java.sql.SQLException;
 import java.util.Optional;
 import java.util.Scanner;
 

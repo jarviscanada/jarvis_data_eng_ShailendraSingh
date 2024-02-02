@@ -7,13 +7,21 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Optional;
 
+import org.apache.log4j.BasicConfigurator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class PositionDao implements CrudDao<Position, String>
 {
-
+    private static final Logger logger = LoggerFactory.getLogger(PositionDao.class);
     private Connection ConnectionObject;
 
     public PositionDao(Connection newConnection)
     {
+        //Initialize logger
+        BasicConfigurator.configure();
+        PositionDao.logger.debug("Started PositionDao");
+
         this.ConnectionObject = newConnection;
     }
 
@@ -22,6 +30,7 @@ public class PositionDao implements CrudDao<Position, String>
     {
         if(entity == null)
         {
+            PositionDao.logger.debug("Invalid entity input");
             throw new IllegalArgumentException();
         }
 
@@ -31,6 +40,8 @@ public class PositionDao implements CrudDao<Position, String>
         //If the entity already exists, then simply update the entry
         if(entityExists)
         {
+            PositionDao.logger.debug(String.format("Trying to update Position (%s)", entity.getSymbol()));
+
             String sqlStatement =
                     "UPDATE position " +
                     "SET symbol = ?, number_of_shares = ?, value_paid = ? " +
@@ -49,13 +60,18 @@ public class PositionDao implements CrudDao<Position, String>
             }
             catch (SQLException e)
             {
+                PositionDao.logger.debug(String.format("Database error trying to update Position (%s)", entity.getSymbol()));
                 throw new RuntimeException(e);
             }
+
+            PositionDao.logger.debug(String.format("Finished update (%s)", entity.getSymbol()));
         }
 
         //If the entity does not exist, it is new and must be inserted
         else
         {
+            PositionDao.logger.debug(String.format("Trying to save Position (%s)", entity.getSymbol()));
+
             String sqlStatement =
                     "INSERT INTO position (symbol, number_of_shares, value_paid) " +
                     "VALUES (?, ?, ?);";
@@ -70,8 +86,11 @@ public class PositionDao implements CrudDao<Position, String>
             }
             catch (SQLException e)
             {
+                PositionDao.logger.debug(String.format("Database error trying to update position (%s)", entity.getSymbol()));
                 throw new RuntimeException(e);
             }
+
+            PositionDao.logger.debug(String.format("Finished save (%s)", entity.getSymbol()));
         }
 
         return entity;
@@ -82,6 +101,7 @@ public class PositionDao implements CrudDao<Position, String>
     {
         if(s == null)
         {
+            PositionDao.logger.debug(String.format("Invalid ID input, (%s)", s));
             throw new IllegalArgumentException();
         }
 
@@ -90,6 +110,7 @@ public class PositionDao implements CrudDao<Position, String>
                 "SELECT * " +
                 "FROM position " +
                 "WHERE symbol = ?;";
+        PositionDao.logger.debug(String.format("Attempting to retrieve Position object (%s)", s));
         try(PreparedStatement statement = ConnectionObject.prepareStatement(sqlStatement))
         {
             statement.setString(1, s);
@@ -99,15 +120,18 @@ public class PositionDao implements CrudDao<Position, String>
             //Get the output row, convert it to a Position object and return it
             if(outputSet.next())
             {
+                PositionDao.logger.debug(String.format("Retrieved Position object (%s)", s));
                 return Optional.of(new Position(outputSet));
             }
         }
         catch (SQLException e)
         {
+            PositionDao.logger.debug(String.format("Database error trying to retrieve Position (%s)", s));
             throw new RuntimeException(e);
         }
 
         //If it gets here, we could not find any entries with symbol s
+        PositionDao.logger.debug(String.format("Could not find Position object (%s)", s));
         return Optional.empty();
     }
 
@@ -120,6 +144,7 @@ public class PositionDao implements CrudDao<Position, String>
         String sqlStatement =
                 "SELECT * " +
                 "FROM position;";
+        PositionDao.logger.debug("Attempting to find all Positions in database");
         try(PreparedStatement statement = ConnectionObject.prepareStatement(sqlStatement))
         {
             ResultSet outputSet = statement.executeQuery();
@@ -132,10 +157,12 @@ public class PositionDao implements CrudDao<Position, String>
         }
         catch (SQLException e)
         {
+            PositionDao.logger.debug("Database error while searching for positions");
             throw new RuntimeException(e);
         }
 
         //Return final list of Positions
+        PositionDao.logger.debug(String.format("Found %d positions"), allPositions.size());
         return allPositions;
     }
 
@@ -150,6 +177,7 @@ public class PositionDao implements CrudDao<Position, String>
         String sqlStatement =
                 "DELETE FROM position " +
                 "WHERE symbol = ?;";
+        PositionDao.logger.debug(String.format("Trying to delete Position by ID (%s)", s));
         try(PreparedStatement statement = ConnectionObject.prepareStatement(sqlStatement))
         {
             statement.setString(1, s);
@@ -158,21 +186,29 @@ public class PositionDao implements CrudDao<Position, String>
         }
         catch (SQLException e)
         {
+            PositionDao.logger.debug("Database error while deleting position");
             throw new RuntimeException(e);
         }
+
+        PositionDao.logger.debug(String.format("Deleted position (%s)", s));
+
     }
 
     @Override
     public void deleteAll()
     {
         String sqlStatement = "DELETE FROM position;";
+        PositionDao.logger.debug("Trying to delete all positions");
         try(PreparedStatement statement = ConnectionObject.prepareStatement(sqlStatement))
         {
             statement.executeUpdate();
         }
         catch (SQLException e)
         {
+            PositionDao.logger.debug("Database error while trying to delete all positions");
             throw new RuntimeException(e);
         }
+
+        PositionDao.logger.debug("Deleted all positions");
     }
 }
