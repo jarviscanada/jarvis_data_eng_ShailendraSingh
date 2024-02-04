@@ -30,8 +30,9 @@ public class QuoteDao implements CrudDao<Quote, String>
     {
         if(entity == null)
         {
-            QuoteDao.logger.debug("Invalid entity input");
-            throw new IllegalArgumentException();
+            String errorMessage = "Invalid entity input";
+            QuoteDao.logger.error(errorMessage);
+            throw new IllegalArgumentException(errorMessage);
         }
 
         //Check if the entity is already in the database
@@ -68,8 +69,9 @@ public class QuoteDao implements CrudDao<Quote, String>
 
             catch (SQLException e)
             {
-                QuoteDao.logger.debug(String.format("Database error trying to update Quote (%s)", entity.getSymbol()));
-                throw new RuntimeException(e);
+                String errorMessage = String.format("Database error trying to update Quote (%s)", entity.getSymbol());
+                QuoteDao.logger.error(errorMessage);
+                throw new RuntimeException(errorMessage, e);
             }
 
             QuoteDao.logger.debug(String.format("Finished update (%s)", entity.getSymbol()));
@@ -103,8 +105,9 @@ public class QuoteDao implements CrudDao<Quote, String>
 
             catch (SQLException e)
             {
-                QuoteDao.logger.debug(String.format("Database error trying to save Quote (%s)", entity.getSymbol()));
-                throw new RuntimeException(e);
+                String errorMessage = String.format("Database error trying to save Quote (%s)", entity.getSymbol());
+                QuoteDao.logger.error(errorMessage);
+                throw new RuntimeException(errorMessage, e);
             }
 
             QuoteDao.logger.debug(String.format("Finished save (%s)", entity.getSymbol()));
@@ -118,8 +121,9 @@ public class QuoteDao implements CrudDao<Quote, String>
     {
         if(s == null)
         {
-            QuoteDao.logger.debug(String.format("Invalid ID input, (%s)", s));
-            throw new IllegalArgumentException();
+            String errorMessage = String.format("Invalid ID input, (%s)", s);
+            QuoteDao.logger.error(errorMessage);
+            throw new IllegalArgumentException(errorMessage);
         }
 
         //Get every row with the symbol s. symbol is a primary key and thus only one row should exist
@@ -143,8 +147,9 @@ public class QuoteDao implements CrudDao<Quote, String>
         }
         catch (SQLException e)
         {
-            QuoteDao.logger.debug(String.format("Database error trying to retrieve Quote (%s)", s));
-            throw new RuntimeException(e);
+            String errorMessage = String.format("Database error trying to retrieve Quote (%s)", s);
+            QuoteDao.logger.error(errorMessage);
+            throw new RuntimeException(errorMessage, e);
         }
 
         //If it gets here, we could not find any entries with symbol s
@@ -174,8 +179,9 @@ public class QuoteDao implements CrudDao<Quote, String>
         }
         catch (SQLException e)
         {
-            QuoteDao.logger.debug("Database error while searching for quotes");
-            throw new RuntimeException(e);
+            String errorMessage = "Database error while searching for quotes";
+            QuoteDao.logger.error(errorMessage);
+            throw new RuntimeException(errorMessage, e);
         }
 
         //Return final list of quotes
@@ -188,7 +194,9 @@ public class QuoteDao implements CrudDao<Quote, String>
     {
         if(s == null)
         {
-            throw new IllegalArgumentException();
+            String errorMessage = "Symbol cannot be null";
+            QuoteDao.logger.error(errorMessage);
+            throw new IllegalArgumentException(errorMessage);
         }
 
         String sqlStatement =
@@ -203,8 +211,9 @@ public class QuoteDao implements CrudDao<Quote, String>
         }
         catch (SQLException e)
         {
-            QuoteDao.logger.debug("Database error while deleting quote");
-            throw new RuntimeException(e);
+            String errorMessage = "Database error while deleting quote";
+            QuoteDao.logger.error(errorMessage);
+            throw new RuntimeException(errorMessage, e);
         }
         QuoteDao.logger.debug(String.format("Deleted quote (%s)", s));
     }
@@ -220,8 +229,9 @@ public class QuoteDao implements CrudDao<Quote, String>
         }
         catch (SQLException e)
         {
-            QuoteDao.logger.debug("Database error while trying to delete all quotes");
-            throw new RuntimeException(e);
+            String errorMessage = "Database error while trying to delete all quotes";
+            QuoteDao.logger.error(errorMessage);
+            throw new RuntimeException(errorMessage, e);
         }
 
         QuoteDao.logger.debug("Deleted all quotes");

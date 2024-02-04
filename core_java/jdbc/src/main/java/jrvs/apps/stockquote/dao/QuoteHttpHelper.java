@@ -53,8 +53,9 @@ public class QuoteHttpHelper
         }
         catch (IOException | InterruptedException e)
         {
-            QuoteHttpHelper.logger.debug(String.format("Error while processing API request for (%s)", symbol));
-            throw new RuntimeException(e);
+            String errorMessage = String.format("Error while processing API request for (%s)", symbol);
+            QuoteHttpHelper.logger.error(errorMessage);
+            throw new RuntimeException(errorMessage, e);
         }
 
         //Convert JSON to Quote object
@@ -63,8 +64,9 @@ public class QuoteHttpHelper
         Quote quoteObject = gsonObject.fromJson(jsonResponse, Quote_Root.class).GlobalQuote;
         if(quoteObject == null)
         {
-            QuoteHttpHelper.logger.debug(String.format("Error while converting to JSON (%s)", symbol));
-            throw new IllegalArgumentException();
+            String errorMessage = String.format("Error while converting to JSON (%s)", symbol);
+            QuoteHttpHelper.logger.error(errorMessage);
+            throw new IllegalArgumentException(errorMessage);
         }
 
         //If the quote's symbol is null, then clearly the API search failed and  the symbol doesn't exist
