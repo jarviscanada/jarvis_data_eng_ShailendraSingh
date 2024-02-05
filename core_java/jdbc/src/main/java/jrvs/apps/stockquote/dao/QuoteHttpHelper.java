@@ -21,10 +21,7 @@ public class QuoteHttpHelper
 
     public QuoteHttpHelper(String apiKey)
     {
-        //Initialize logger
-        BasicConfigurator.configure();
         QuoteHttpHelper.logger.debug("starting QuoteHttpHelper");
-
         this.APIKey = apiKey;
         this.Client = HttpClient.newHttpClient();
     }

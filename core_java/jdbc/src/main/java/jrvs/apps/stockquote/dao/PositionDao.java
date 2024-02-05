@@ -18,10 +18,7 @@ public class PositionDao implements CrudDao<Position, String>
 
     public PositionDao(Connection newConnection)
     {
-        //Initialize logger
-        BasicConfigurator.configure();
         PositionDao.logger.debug("Started PositionDao");
-
         this.ConnectionObject = newConnection;
     }
 

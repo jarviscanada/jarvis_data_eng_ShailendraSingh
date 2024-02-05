@@ -100,7 +100,7 @@ public class StockQuoteController
                 while(true)
                 {
                     int numberOfRequestedShares = -1;
-                    System.out.print("Please enter the number of shares you wish to sell: ");
+                    System.out.print("Please enter the number of shares you wish to buy: ");
                     try
                     {
                         numberOfRequestedShares = Integer.parseInt(input.nextLine());

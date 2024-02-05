@@ -19,8 +19,6 @@ public class QuoteDao implements CrudDao<Quote, String>
 
     public QuoteDao(Connection newConnection)
     {
-        //Initialize logger
-        BasicConfigurator.configure();
         QuoteDao.logger.debug("Started QuoteDao");
         this.ConnectionObject = newConnection;
     }
