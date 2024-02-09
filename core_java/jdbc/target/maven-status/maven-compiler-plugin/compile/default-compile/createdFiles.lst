@@ -1,0 +1,12 @@
+jrvs/apps/stockquote/dao/PositionDao.class
+jrvs/apps/stockquote/dao/QuoteDao.class
+jrvs/apps/stockquote/StockQuoteController.class
+jrvs/apps/stockquote/Main.class
+jrvs/apps/stockquote/dao/CrudDao.class
+jrvs/apps/stockquote/dao/Position.class
+jrvs/apps/stockquote/dao/Quote_Root.class
+jrvs/apps/stockquote/services/QuoteService.class
+jrvs/apps/stockquote/dao/Quote.class
+jrvs/apps/stockquote/StockQuoteProperties.class
+jrvs/apps/stockquote/dao/QuoteHttpHelper.class
+jrvs/apps/stockquote/services/PositionService.class

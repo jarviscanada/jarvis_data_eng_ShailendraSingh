@@ -31,6 +31,11 @@
       "description": "Implemented a simple version of the classic grep command line application. This application takes in an input directory that contains files, these files are scanned line-by-line, matched with a given regex pattern and those matched lines are printed in a specified output file. This project was developed using Java and its dependencies were managed via Maven.",
       "git_url": "../develop/core_java/grep",
       "name": "grep"
+    },
+    {
+      "description": "Implemented a basic stock market simulator. This application uses the Alpha Vantage REST API to retrieve the most up-to-date quotes for any stock the user inputs. These quotes are cached into a PostgreSQL database. The user is then given the opportunity to buy and sell shares of certain stocks (positions). These purchases are also recorded in the database. This project was developed using Java and its dependencies were managed via Maven. The database was hosted on a Docker container.",
+      "git_url": "../develop/core_java/jdbc",
+      "name": "Stock Quote App"
     }
   ],
   "name": "Shailendra Singh",
