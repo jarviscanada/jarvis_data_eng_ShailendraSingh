@@ -1,0 +1,9 @@
+{
+  "DatabaseClass":"org.postgresql.Driver",
+  "Server":"localhost",
+  "Database":"stock_quote",
+  "Port":5432,
+  "Username":"postgres",
+  "Password":"password",
+  "ApiKey":"c84683554dmsh2433fc8bb0f3fc4p1316a6jsn6c71701641e1"
+}

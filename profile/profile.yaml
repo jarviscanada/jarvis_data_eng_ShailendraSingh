@@ -47,6 +47,10 @@ jarvis_projects:
     git_url: "../develop/core_java/grep"
     description: "Implemented a simple version of the classic grep command line application. This application takes in an input directory that contains files, these files are scanned line-by-line, matched with a given regex pattern and those matched lines are printed in a specified output file. This project was developed using Java and its dependencies were managed via Maven."
 
+  - name: "Stock Quote App"
+    git_url: "../develop/core_java/jdbc"
+    description: "Implemented a basic stock market simulator. This application uses the Alpha Vantage REST API to retrieve the most up-to-date quotes for any stock the user inputs. These quotes are cached into a PostgreSQL database. The user is then given the opportunity to buy and sell shares of certain stocks (positions). These purchases are also recorded in the database. This project was developed using Java and its dependencies were managed via Maven. The database was hosted on a Docker container."
+
 #  - name: "Springboot App"
 #    git_url: "/springboot"
 #    description: ""
