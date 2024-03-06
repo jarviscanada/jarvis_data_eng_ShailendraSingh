@@ -201,3 +201,16 @@ SELECT SUBSTRING(surname, 1, 1) AS letter, COUNT(*) AS count
 FROM cd.members
 GROUP BY letter
 ORDER BY letter;
+
+--Spark----------------------------------------------------------------------------------------------------------------
+
+--Produce a list of all members who have used a tennis court
+--https://pgexercises.com/questions/joins/threejoin.html
+SELECT DISTINCT M.firstname || ' ' || M.surname AS member, F.name AS facility
+FROM members AS M
+RIGHT JOIN bookings AS B
+ON M.memid = B.memid
+INNER JOIN facilities AS F
+ON B.facid = F.facid
+WHERE  F.name LIKE '%Tennis Court%'
+ORDER BY member, facility;
