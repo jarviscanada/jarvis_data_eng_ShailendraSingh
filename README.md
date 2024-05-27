@@ -6,7 +6,7 @@ I am a software developer absolutely fascinated by everything software and makin
 
 **Proficient:** C#, C++, Java, Python, Win32 Application Development, .NET Application Development
 
-**Competent:** Agile/Scrum, Git, ASP.NET, HTML, CSS, XAML
+**Competent:** Databricks, Agile/Scrum, Git, ASP.NET, HTML, CSS, XAML
 
 **Familiar:** Bash, Powershell, Blazor WebAssembly, Android Development, Azure App Services, Google Cloud Platform
 
@@ -40,6 +40,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_Shailendra
 
 
 ## Miscellaneous
+- Databricks Lakehouse Fundamentals Accreditation (April 2024 - April 2025)
 - Recreational walking, cycling and swimming (Recently cycled from Brampton to Toronto in one go!)
 - PC Gaming (MechWarrior, World of Warcraft, etc)
 - Reverse Engineering using Ghidra, IDA Free and x32dbg

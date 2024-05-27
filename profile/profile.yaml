@@ -20,6 +20,7 @@ skills:
     - .NET Application Development
   # At least 5 skills
   competent:
+    - Databricks
     - Agile/Scrum
     - Git
     - ASP.NET
@@ -113,10 +114,10 @@ education:
 #Optional section
 others:
     #category
-#  - title: "Certificates"
-#    #list of items
-#    bullets:
-#      - ""
+  - title: "Certifications"
+    #list of items
+    bullets:
+      - "Databricks Lakehouse Fundamentals Accreditation (April 2024 - April 2025)"
 #  - title: "Awards"
 #    bullets:
 #      - ""
