@@ -4,7 +4,7 @@ I am a software developer absolutely fascinated by everything software and makin
 
 ## Skills
 
-**Proficient:** C#, C++, Java, Python, Win32 Application Development, .NET Application Development
+**Proficient:** C#, C++, Java, Python, Scala, Win32 Application Development, .NET Application Development
 
 **Competent:** Databricks, Agile/Scrum, Git, ASP.NET, HTML, CSS, XAML
 
