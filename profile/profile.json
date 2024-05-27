@@ -42,6 +42,12 @@
   "others": [
     {
       "bullets": [
+        "Databricks Lakehouse Fundamentals Accreditation (April 2024 - April 2025)"
+      ],
+      "title": "Certifications"
+    },
+    {
+      "bullets": [
         "Recreational walking, cycling and swimming (Recently cycled from Brampton to Toronto in one go!)",
         "PC Gaming (MechWarrior, World of Warcraft, etc)",
         "Reverse Engineering using Ghidra, IDA Free and x32dbg",
@@ -66,6 +72,7 @@
   ],
   "skills": {
     "competent": [
+      "Databricks",
       "Agile/Scrum",
       "Git",
       "ASP.NET",
